@@ -45,7 +45,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         logKeyHash();
         initViews();
-		AppotaGameSDK.getInstance().hideWelcomeView(false).setKeepLoginSession(true).setSDKButtonVisibility(true).setAutoShowLogin(false).init(this,new MyImplApptaGameSDKCallback());
+		AppotaGameSDK.getInstance().hideWelcomeView(false).autoCatchException().setKeepLoginSession(true).setSDKButtonVisibility(true).setAutoShowLogin(false).init(this,new MyImplApptaGameSDKCallback());
     	AppotaGameSDK.getInstance().sendView("Home Puzzle Game "+getAppVersion(this));
     	AppotaGameSDK.getInstance().sendEvent("Start Game", "Open Application", "My custom label");
     }
@@ -75,15 +75,6 @@ public class MainActivity extends Activity {
         Button makePaymentPackageCoin = (Button) findViewById(R.id.makePaymentPackageCoin);
         makePaymentPackageCoin.setBackgroundDrawable(btnPayCoinPackageBackground);
         
-        CheckBox isLandscapeMode = (CheckBox) findViewById(R.id.landscapeCheckbox);
-        isLandscapeMode.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-			
-			@Override
-			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-				Log.e("Checkbox", "onCheckedChanged:"+isChecked);
-				AppotaGameSDK.getInstance().setLayoutOrientation(isChecked?ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE:ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-			}
-		});
         CheckBox floatingButtonToogle = (CheckBox) findViewById(R.id.floatingButtonToogle);
         floatingButtonToogle.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 			
