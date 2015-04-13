@@ -42,11 +42,11 @@ Version 4 of the Appota Game for iOS has published in this reposity and in <b> D
 
   	a.Working with Eclipse
 
-	![eclipse_import_sdk_lib](https://git.appota.com/uploads/ngocnm/android-sdk4/7a6f76bba0/eclipse_import_sdk_lib.PNG)
+	![eclipse_import_sdk_lib](docs/images/eclipse_import_sdk_lib.PNG)
 
   	b.Working with Android Studio
 
-	![android_studio_add_sdk_lib](https://git.appota.com/uploads/ngocnm/android-sdk4/d649caf90d/android_studio_add_sdk_lib.PNG)
+	![android_studio_add_sdk_lib](docs/images/android_studio_add_sdk_lib.PNG)
 
 - Included libraries in Android Game SDK (if you are using these libs in your project, please remove it ):
 	
@@ -92,7 +92,7 @@ Version 4 of the Appota Game for iOS has published in this reposity and in <b> D
 
 	Example:
 
-	![appota_sdk_callback_impl_new_17122014](https://git.appota.com/uploads/sdks/appota-sdk-4-document/0a241a116f/impl_get_payment_state.PNG)
+	![appota_sdk_callback_impl_new_17122014](docs/images/impl_get_payment_state.PNG)
 
 
 * Extra Methods:
@@ -125,7 +125,7 @@ Version 4 of the Appota Game for iOS has published in this reposity and in <b> D
 	
 	* Open file AndroidManifest.xml in your Android project.
 	
-	![manifest_file](https://git.appota.com/uploads/ngocnm/android-sdk4/7a1f791cfc/manifest_file.PNG)
+	![manifest_file](docs/images/manifest_file.PNG)
 	    
 
 	* Set basic permissions for SDK
@@ -150,7 +150,7 @@ Version 4 of the Appota Game for iOS has published in this reposity and in <b> D
 
     	`<uses-permission android:name="com.android.vending.BILLING" />`
 
-	![permission](https://git.appota.com/uploads/ngocnm/android-sdk4/f793c190f9/permission.PNG)
+	![permission](docs/images/permission.PNG)
 
 
 	* Declare BaseSDKActivity of SDK:
@@ -190,7 +190,7 @@ Version 4 of the Appota Game for iOS has published in this reposity and in <b> D
             android:value="@string/your_twitter_consumer_secret" />`
 
 	
-		![delare_activity_metadata](https://git.appota.com/uploads/ngocnm/android-sdk4/997abd7577/delare_activity_metadata.PNG)
+		![delare_activity_metadata](docs/images/delare_activity_metadata.PNG)
 
 
 		if these tags not set, twitter configuration will be set by SDK.
@@ -220,12 +220,12 @@ Register screen can be navigated from login screen.
 	
 - if user’s device has installed Facebook application then some dialogs require basic permissions the SDK needs to be allowed will popup.
 
-	![facebook_require_permission](https://git.appota.com/uploads/ngocnm/android-sdk4/0fb99390fe/facebook_require_permission.png)
+	![facebook_require_permission](docs/images/facebook_require_permission.png)
 
 - if user’s device hasn’t installed Facebook application then a web dialog login for Facebook will show up.
 
 
-	![facebook_webdialog](https://git.appota.com/uploads/ngocnm/android-sdk4/164345e5de/facebook_webdialog.PNG)
+	![facebook_webdialog](docs/images/facebook_webdialog.PNG)
 
 
 
@@ -238,7 +238,7 @@ Register screen can be navigated from login screen.
 Select any google acount(gmail address) you want to use login:
 
 
-![gmail_select_accout](https://git.appota.com/uploads/ngocnm/android-sdk4/89b40393d9/gmail_select_accout.png)
+![gmail_select_accout](docs/images/gmail_select_accout.png)
 
 
 
@@ -252,7 +252,7 @@ Select any google acount(gmail address) you want to use login:
 Use your twitter account to fill the Twitter login form:
 
 
-![login_twitter](https://git.appota.com/uploads/ngocnm/android-sdk4/008e7f2032/login_twitter.PNG)
+![login_twitter](docs/images/login_twitter.PNG)
 
 
 #### [2.3.3. Show user information](#header233)
