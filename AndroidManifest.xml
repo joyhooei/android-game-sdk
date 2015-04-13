@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.puzzlegame.me"
+    android:versionCode="21"
+    android:versionName="1.8" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="21" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <!-- Need this permission for error tracking -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- Need this permission for error tracking -->
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <!-- Need this permission for login in google -->
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <!-- use this for google payment -->
+    <uses-permission android:name="com.android.vending.BILLING" />
+	<!-- use for push notification -->
+	<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:configChanges="screenSize|orientation|keyboardHidden"
+            android:screenOrientation="landscape" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Declare Login Activity for Facebook login -->
+        <activity
+            android:name="com.appota.gamesdk.v4.ui.BaseSDKActivty"
+            android:theme="@android:style/Theme.Dialog" >
+        </activity>
+        <!-- android:theme="@android:style/Theme.Dialog" -->
+        <!-- Declare Login Activity for Facebook login -->
+        <activity
+            android:name="com.appota.facebook.LoginActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+       
+        <!-- set Appota Api Key -->
+        <meta-data
+            android:name="com.appota.apiKey"
+            android:value="YOUR_APPOTA_APIKEY" />
+
+        <!-- Declare below meta-data for twitter login if you want to use your Twitter Application for login, default use Appota Twitter application -->
+        <meta-data
+            android:name="com.appota.twitter.consumer.key"
+            android:value="@string/twitter_consumer_key" />
+        <meta-data
+            android:name="com.appota.twitter.consumer.secret"
+            android:value="@string/twitter_consumer_secret" />
+        <!-- Set Facebook Application ID -->
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+<!--         Sender ID for push notification -->
+        <meta-data
+            android:name="com.appota.push.gcm_sender_id"
+            android:value="id:YOUR_GCM_SENDER_ID" />
+
+    </application>
+
+</manifest>

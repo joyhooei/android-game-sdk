@@ -1,0 +1,145 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/sample_bg"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.puzzlegame.me.MainActivity" >
+
+    <TextView
+        android:id="@+id/tymAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:drawableLeft="@drawable/tym"
+        android:text="0"
+        android:textColor="@android:color/white"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/coinAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_toRightOf="@id/tymAmount"
+        android:drawableLeft="@drawable/coin"
+        android:text="0"
+        android:textColor="@android:color/white"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/versionInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_margin="10dp"
+        android:text="Version - build"
+        android:textColor="@android:color/white"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/makePayment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:onClick="makePayment"
+        android:text="Show Payment"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/makePaymentPackage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/makePayment"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:drawableRight="@drawable/tym"
+        android:onClick="makePaymentPackage"
+        android:text="4000"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/makePaymentPackageCoin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/makePayment"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:drawableRight="@drawable/coin"
+        android:onClick="makePaymentPackageCoin"
+        android:text="100"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/logoutBtn"
+        android:layout_alignParentRight="true"
+        android:alpha="0.5"
+        android:onClick="logOut"
+        android:text="Log Out"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:alpha="0.5"
+        android:id="@+id/inviteFBFriend"
+        android:onClick="inviteFBFriend"
+        android:text="Invite FB Friend"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
+	<Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="0.5"
+        android:layout_above="@id/inviteFBFriend"
+        android:onClick="showUserInfo"
+        android:text="show User Info"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
+    <CheckBox
+        android:id="@+id/landscapeCheckbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/makePaymentPackage"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="10dp"
+        android:checked="true"
+        android:background="@android:color/transparent"
+        android:text="Landscape Mode"
+        android:textColor="@android:color/white" />
+
+    <CheckBox
+        android:id="@+id/floatingButtonToogle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/landscapeCheckbox"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/transparent"
+        android:text="Hide Floating Button"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="10dp"
+        android:layout_above="@id/logoutBtn"
+        android:background="@android:color/transparent"
+        android:clickable="true"
+        android:onClick="sendError"
+        android:padding="5dp"
+        android:text="Send Error"
+        android:visibility="visible" />
+
+</RelativeLayout>

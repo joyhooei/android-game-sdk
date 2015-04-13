@@ -401,6 +401,8 @@ Here are exceptions:
 	
 	All exceptions are caught by SDK4 will be sent to server & available for dev for viewing & analyzing.
 
-	If you're using Crashlytics or other crash reporting, you will need to turn crash exception handler of SDK off:
+	If you're using Crashlytics or other crash reporting but you want to using Apota exception handler of SDK call autoCatchException method (default auto catch exception if you are not using any crash reporting):
 
-	`AppotaGameSDK.getInstance().ignoreAutoCatchException();`
+	`AppotaGameSDK.getInstance().autoCatchException();`
+
+	*You must call autoCatchException()* **before** call AppotaGameSDK.init()
