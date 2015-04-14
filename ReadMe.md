@@ -13,25 +13,25 @@ Version 4 of the Appota Game for Android has published in this reposity and in <
 
 [2.3. Users](#2-3users)
 
-[2.3.1. Register](#2-3-1-register)
+[2.3.1. Register](#231-register)
 
-[2.3.2. Login](#2-3-2-login)
+[2.3.2. Login](#232-login)
 
-[2.3.3. Show user information](#2-3-3-show-user-information)
+[2.3.3. Show user information](#233-show-user-information)
 
-[2.3.4. Get user information](#2-3-4-get-user-information)
+[2.3.4. Get user information](#234-get-user-information)
 
-[2.3.5. Logout](#2-3-4-logout)
+[2.3.5. Logout](#235-logout)
 
-[2.3.6. Invite facebook friends](#2-3-6-invite-facebook-friends)
+[2.3.6. Invite facebook friends](#236-invite-facebook-friends)
 
-[2.3.7. Login session](#2-3-7-login-session)
+[2.3.7. Login session](#237-login-session)
 
-[2.4. Payment](#24payment)
+[2.4. Payment](#24-payment)
 
-[2.5. Push Notifications](#25push-notification)
+[2.5. Push Notifications](#25-push-notifications)
 
-[2.6. Analytics](#26analytics)
+[2.6. Analytics](#26-analytics)
 
 [3. Exception](#3-exception)
 
