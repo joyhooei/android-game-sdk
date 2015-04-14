@@ -11,7 +11,7 @@ Version 4 of the Appota Game for Android has published in this reposity and in <
 
 [2.2. Configure SDK](#2-2-configure-sdk)
 
-[2.3. Các chức năng liên quan đến người dùng](#2-3-c-c-ch-c-n-ng-li-n-quan-n-ng-i-d-ng)
+[2.3. Users](#2-3users)
 
 [2.3.1. Register](#2-3-1-register)
 
@@ -27,11 +27,11 @@ Version 4 of the Appota Game for Android has published in this reposity and in <
 
 [2.3.7. Login session](#2-3-7-login-session)
 
-[2.4. Các chức năng liên quan đến thanh toán](#2-4-c-c-ch-c-n-ng-li-n-quan-n-thanh-to-n)
+[2.4. Payment](#24payment)
 
-[2.5. Các chức năng liên quan đến push notification](#2-5-c-c-ch-c-n-ng-li-n-quan-n-push-notification)
+[2.5. Push Notifications](#25push-notification)
 
-[2.6. Các chức năng liên quan đến thống kê](#2-6-c-c-ch-c-n-ng-li-n-quan-n-th-ng-k)
+[2.6. Analytics](#26analytics)
 
 [3. Exception](#3-exception)
 
@@ -196,7 +196,7 @@ Version 4 of the Appota Game for Android has published in this reposity and in <
 		if these tags not set, twitter configuration will be set by SDK.
 
 
-### [2.3. Các chức năng liên quan đến người dùng](#header23)
+### [2.3. Users](#users)
 
 >- SDK provides methods for creating account, login account(using facebook,google & twitter)  on Appota system so  that user can use  their account to make payment.
 >
@@ -292,7 +292,7 @@ If you want users have to login every time they open game/app and their login se
 **Notice** : Don't forget to call `AppotaGameSDK.getInstance().finishSDK();` in order to make sure this feature works normally as well as some resources of SDK will be released.
 
 
-### [2.4. Các chức năng liên quan đến thanh toán](#header24)
+### [2.4. Payment](#header24)
 
 >1.Payments implementation guide:
 >
@@ -346,7 +346,7 @@ If you want users have to login every time they open game/app and their login se
 
 		for creating charging money system on mobile web.
 
-### [2.5. Các chức năng liên quan đến push notification](#header25)
+### [2.5. Push Notifications](#header25)
 Set push notification:
 
 	AppotaGameSDK.getInstance().setPushDeviceToken("device_token_for_push_notification").init(activity,sdkCallback);
@@ -355,7 +355,7 @@ Set push notification to a group:
 	
 	AppotaGameSDK.getInstance().setPushGroup("device_tokens(group1,group2....)").init(activity,sdkCallback);
 
-### [2.6. Các chức năng liên quan đến thống kê](#header26)
+### [2.6. Analytics](#header26)
 
 #### [2.6.1 Send activity log](#header261)
 
