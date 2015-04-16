@@ -7,7 +7,7 @@ Version 4 of the Appota Game for Android has published in this reposity and in <
 
 [2. Client APIs](#2-client-apis)
  
-[2.1. Initial SDK 4](#21-initial-SDK-4)
+[2.1. Initial SDK 4](#21-init-sdk-4)
 
 [2.2. Configure SDK](#2-2-configure-sdk)
 
