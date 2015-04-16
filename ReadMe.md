@@ -97,26 +97,14 @@ Version 4 of the Appota Game for Android has published in this reposity and in <
 
 * Extra Methods:
 
-      a. Call init SDK with inited sdk callback:
-
-		AppotaGameSDK.getInstance().init(activity,appotaSDKCallback, new OnInitedSDKCallback() {
-			
-			@Override
-			public void onSDKInited(boolean success) {
-
-                           //Do your stuffs if needed
-
-			}
-		}); 
-
-      b. Hide welcome view: (default is visible)
+      Hide welcome view: (default is visible)
 
 		AppotaGameSDK.getInstance().hideWelcomeView(true).init(activity,sdkCallback);
 
 
 	Note.
 
-	Call **AppotaGameSDK.getInstance().finishSDK()**  before exit your application.
+	Call **AppotaGameSDK.getInstance().finishSDK()**  when application is closed.
 
 	
 ### [2.2. Configure SDK](#header22)
@@ -405,4 +393,4 @@ Here are exceptions:
 
 	`AppotaGameSDK.getInstance().autoCatchException();`
 
-	*You must call autoCatchException()* **before** call AppotaGameSDK.init()
+	*You must call autoCatchException()* **before** calling AppotaGameSDK.init()
