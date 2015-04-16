@@ -87,7 +87,7 @@ Version 4 of the Appota Game for Android has published in this reposity and in <
 	```
 	
 
-	[See detail AppotaPaymentResult at 2.4.c](#2-4-c-c-ch-c-n-ng-li-n-quan-n-thanh-to-n)	
+	[See detail AppotaPaymentResult at 2.4.c](#24-payment)	
 
 
 	Example:
@@ -178,17 +178,19 @@ Version 4 of the Appota Game for Android has published in this reposity and in <
             android:value="@string/your_twitter_consumer_secret" />`
 
 	
+		if these tags not set, twitter configuration will be set by SDK.
+
+		
+
 		![delare_activity_metadata](docs/images/delare_activity_metadata.PNG)
 
-
-		if these tags not set, twitter configuration will be set by SDK.
 
 
 ### [2.3. Users](#users)
 
 >- SDK provides methods for creating account, login account(using facebook,google & twitter)  on Appota system so  that user can use  their account to make payment.
 >
->- **AppotaSDKCallback** is a listener for successful registration, log-in as well as payment transaction ([detail AppotaSDKCallback at 2.1 ](#2-1-kh-i-t-o-appota-sdk4-trong-project)).
+>- **AppotaSDKCallback** is a listener for successful registration, log-in as well as payment transaction ([detail AppotaSDKCallback at 2.1 ](#21-init-sdk-4)).
 >
 
 #### [2.3.1. Register](#header231)
