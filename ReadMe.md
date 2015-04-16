@@ -7,7 +7,7 @@ Version 4 of the Appota Game for Android has published in this reposity and in <
 
 [2. Client APIs](#2-client-apis)
  
-[2.1. Initial Appota SDK4 trong project](#2-1-kh-i-t-o-appota-sdk4-trong-project)
+[2.1. Initial SDK-4](#21-initial-SDK-4)
 
 [2.2. Configure SDK](#2-2-configure-sdk)
 
@@ -62,7 +62,7 @@ Version 4 of the Appota Game for Android has published in this reposity and in <
 	`-keep class com.appota.**{*;} `
 
 ## [2. Client APIs](#header2)
-### [2.1. Khởi tạo Appota SDK4 trong project](#header21)
+### [2.1. Init SDK 4](#header21)
 
 * Calling `AppotaGameSDK.getInstance().init(activity,appotaSDKCallback)`  in onCreate of the first starting activity.
 	
