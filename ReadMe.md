@@ -48,6 +48,22 @@ Version 4 of the Appota Game for Android has published in this reposity and in <
 
 	![android_studio_add_sdk_lib](docs/images/android_studio_add_sdk_lib.PNG)
 
+
+	And add appota_sdk4.jar into build.grandle like below:
+
+	`dependencies {`
+
+    `compile fileTree(dir: 'libs', include: ['*.jar'])`
+
+    `compile 'com.android.support:appcompat-v7:22.0.0'`
+
+    **compile files('libs/appota_sdk4.jar')**
+	
+	`}`
+
+
+	
+
 - Included libraries in Android Game SDK (if you are using these libs in your project, please remove it ):
 	
 		- khandroid-httpclient-4.2.3.jar (khandroid.ext.apache.http)
