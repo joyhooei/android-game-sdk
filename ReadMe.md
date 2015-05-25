@@ -66,7 +66,7 @@ Version 4 of the Appota Game for Android has published in this reposity and in <
 
 - Included libraries in Android Game SDK (if you are using these libs in your project, please remove it ):
 	
-		- khandroid-httpclient-4.2.3.jar (khandroid.ext.apache.http)
+		- gcm.jar (com.google.android.gcm)
 		- twitter4j-core-3.0.5.jar ( twitter4j )
 
 	*Note* : If you use Proguard, add flowing config into your proguard config :
@@ -115,7 +115,8 @@ Version 4 of the Appota Game for Android has published in this reposity and in <
 
       Hide welcome view: (default is visible)
 
-		AppotaGameSDK.getInstance().hideWelcomeView(true).init(activity,sdkCallback);
+
+	- AppotaGameSDK.getInstance().**setHideWelcomeView(true)**.init(activity,sdkCallback);
 
 
 	Note.
@@ -212,12 +213,19 @@ Version 4 of the Appota Game for Android has published in this reposity and in <
 #### [2.3.1. Register](#header231)
 
 
-Register screen can be navigated from login screen.
+Show register view:
+
+`AppotaGameSDK.getInstance().showRegisterView();`
+
 	
 
 #### [2.3.2. Login](#header232)
 
  Call `AppotaGameSDK.getInstance().showLoginView();`   to open login screen.
+
+ If you don't want to show login screen if user hasn't loggin right after your application starts:
+
+ AppotaGameSDK.getInstance().**setAutoShowLoginDialog(false)**;(default is true)
 
 
 ##### [a. Login by Facebook.](#header232a)
@@ -263,16 +271,22 @@ Use your twitter account to fill the Twitter login form:
 
 #### [2.3.3. Show user information](#header233)
 	
-	AppotaGameSDK.getInstance().showUserInfo();
+	AppotaGameSDK.getInstance().showUserInfoView();
 
 
 #### [2.3.4. Get user information](#header2334)
 	
+- To get user information: 
+
 	AppotaGameSDK.getInstance().getUserInfo();
 
 
 	
-return  **AppotaUserLoginResult** ( includes : userId, username, email..)
+    return  **AppotaUserLoginResult** ( includes : userId, username, email..)
+
+- To show user's history transaction screen:
+
+	AppotaGameSDK.getInstance().showTransactionHistory();
 	
 
 #### [2.3.5. Logout](#header235)
@@ -295,6 +309,9 @@ If you want users have to login every time they open game/app and their login se
 
 `AppotaGameSDK.getInstance().setKeepLoginSession(false);`
 
+
+Check whether user is logged-in or not : `AppotaGameSDK.getInstance().isUserLoggedIn()`
+
 **Notice** : Don't forget to call `AppotaGameSDK.getInstance().finishSDK();` in order to make sure this feature works normally as well as some resources of SDK will be released.
 
 
@@ -314,10 +331,10 @@ If you want users have to login every time they open game/app and their login se
 
 - a. Show payment dialog:
 
-	`AppotaGameSDK.getInstance().makePayment();`
+	`AppotaGameSDK.getInstance().showPaymentView();`
 	
 
-	`AppotaGameSDK.getInstance().makePayment(String packageID);`
+	`AppotaGameSDK.getInstance().showPaymentViewWithPackageID(String packageID);`
 
 	- packageID : ID of package payment. If you want to show only one specific package payment, pass its package id, if not, just pass null or empty string value for show all packages. This packageID will be received on [getPaymentState(String packageID)](#2-1-kh-i-t-o-appota-sdk4-trong-project)
 		
