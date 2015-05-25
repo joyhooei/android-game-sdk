@@ -326,7 +326,7 @@ Check whether user is logged-in or not : `AppotaGameSDK.getInstance().isUserLogg
 >2.Payment State (state) :
 >
 >-Payment state is a extra field. It is assigned value by developer( empty string if not assigned) before making any payment and returned itself after transaction successfully. You can use it for checking, validation & compararision  in your game(apps).
->You must override getPaymentState(AppotaPaymentPackage) method to set its value when init SDK.([see example at 2.1 ](#2-1-kh-i-t-o-appota-sdk4-trong-project)).
+>You must override getPaymentState(AppotaPaymentPackage) method to set its value when init SDK.([see example at 2.1 ](#21-init-sdk-4)).
 
 
 - a. Show payment dialog:
@@ -336,7 +336,7 @@ Check whether user is logged-in or not : `AppotaGameSDK.getInstance().isUserLogg
 
 	`AppotaGameSDK.getInstance().showPaymentViewWithPackageID(String packageID);`
 
-	- packageID : ID of package payment. If you want to show only one specific package payment, pass its package id, if not, just pass null or empty string value for show all packages. This packageID will be received on [getPaymentState(String packageID)](#2-1-kh-i-t-o-appota-sdk4-trong-project)
+	- packageID : ID of package payment. If you want to show only one specific package payment, pass its package id, if not, just pass null or empty string value for show all packages. This packageID will be received on [getPaymentState(String packageID)](#21-init-sdk-4)
 		
 
 - b. Methods for showing only one specific payment method separately aren't available in SDK4(SMS,Phone Card,Bank,Google Play payment..);
@@ -427,5 +427,3 @@ Here are exceptions:
 	If you're using Crashlytics or other crash reporting but you want to using Apota exception handler of SDK call autoCatchException method (default auto catch exception if you are not using any crash reporting):
 
 	`AppotaGameSDK.getInstance().autoCatchException();`
-
-	*You must call autoCatchException()* **before** calling AppotaGameSDK.init()
