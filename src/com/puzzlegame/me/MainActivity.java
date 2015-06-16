@@ -6,7 +6,6 @@ import java.security.NoSuchAlgorithmException;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.content.pm.ActivityInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
@@ -43,9 +42,12 @@ public class MainActivity extends Activity {
 		getWindow().requestFeature(Window.FEATURE_NO_TITLE);
 		this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
-        logKeyHash();
+//        logKeyHash();
         initViews();
-		AppotaGameSDK.getInstance().hideWelcomeView(false).autoCatchException().setKeepLoginSession(true).setSDKButtonVisibility(true).setAutoShowLogin(false).init(this,new MyImplApptaGameSDKCallback());
+		AppotaGameSDK.getInstance().setHideWelcomeView(false)
+				.autoCatchException().setKeepLoginSession(true)
+				.setSDKButtonVisibility(true).setAutoShowLoginDialog(false)
+				.configure(this, new MyImplApptaGameSDKCallback());
     	AppotaGameSDK.getInstance().sendView("Home Puzzle Game "+getAppVersion(this));
     	AppotaGameSDK.getInstance().sendEvent("Start Game", "Open Application", "My custom label");
     }
@@ -102,7 +104,7 @@ public class MainActivity extends Activity {
 
     public void makePayment(View view){
     	AppotaGameSDK.getInstance().sendEvent("On Click", "Click show payment", "");
-    	AppotaGameSDK.getInstance().makePayment(null);
+    	AppotaGameSDK.getInstance().showPaymentView();
     }
     
     public void inviteFBFriend(View view){
@@ -110,15 +112,15 @@ public class MainActivity extends Activity {
     }
     
     public void showUserInfo(View view){
-    	AppotaGameSDK.getInstance().showUserInfo();
+    	AppotaGameSDK.getInstance().showUserInfoView();
     }
     
     public void makePaymentPackage(View view){
-    	AppotaGameSDK.getInstance().makePayment("app.pkid.tym4K");
+    	AppotaGameSDK.getInstance().showPaymentViewWithPackageID("app.pkid.tym4K");
     }
     
     public void makePaymentPackageCoin(View view){
-    	AppotaGameSDK.getInstance().makePayment("app.pkid.coin100");
+    	AppotaGameSDK.getInstance().showPaymentViewWithPackageID("app.pkid.coin100");
     }
     
 	public class MyImplApptaGameSDKCallback implements AppotaGameSDKCallback {
@@ -158,6 +160,11 @@ public class MainActivity extends Activity {
 
 		@Override
 		public void onCloseLoginView() {
+			
+		}
+
+		@Override
+		public void onPackageSelected(String packageID) {
 			
 		}
 	}
