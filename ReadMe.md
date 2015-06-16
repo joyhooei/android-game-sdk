@@ -3,7 +3,7 @@
 Version 4 of the Appota Game for Android has published in this reposity and in <b> Developer Preview </b>. Version 3 will continue to be available in our [appota-android-game-sdk3](https://github.com/appota/android-game-sdk3) repository.
 
 
-[*(Change logs - upgrade from SDK version 3 to version 4 <- click here*)](#changelog)
+[*(Change logs - upgrade from SDK version 3 to version 4 <- click here*)](#change-logs---upgrade-from-sdk-version-3-to-version-4)
 
 [1. Import Appota SDK 4](#1-import-appota-sdk4)
 
