@@ -293,9 +293,7 @@ Use your twitter account to fill the Twitter login form:
 
 #### [2.3.5. Logout](#header235)
 
-`AppotaGameSDK.getInstance().logout(true);`
-
-if you want to show login form after calling logout method then pass true if not pass false
+`AppotaGameSDK.getInstance().logout();`
 	
 
 #### [2.3.6. Invite facebook friends](#header2352)
