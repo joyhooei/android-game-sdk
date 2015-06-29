@@ -51,7 +51,7 @@ Version 4 of the Appota Game for Android has published in this reposity and in <
 	![android_studio_add_sdk_lib](docs/images/android_studio_add_sdk_lib.PNG)
 
 
-	And add appota_sdk4.jar into build.grandle like below:
+	And add appota_sdk4.jar into build.gradle like below:
 
 	`dependencies {`
 
@@ -82,7 +82,7 @@ Version 4 of the Appota Game for Android has published in this reposity and in <
 ## [2. Client APIs](#header2)
 ### [2.1. Init SDK 4](#header21)
 
-* Calling `AppotaGameSDK.getInstance().init(activity,appotaSDKCallback)`  in onCreate of the first starting activity.
+* Calling `AppotaGameSDK.getInstance().configure(activity,appotaSDKCallback)`  in onCreate of the first starting activity.
 	
 	```java
 	public interface AppotaGameSDKCallback {
@@ -118,7 +118,7 @@ Version 4 of the Appota Game for Android has published in this reposity and in <
       Hide welcome view: (default is visible)
 
 
-	- AppotaGameSDK.getInstance().**setHideWelcomeView(true)**.init(activity,sdkCallback);
+	- AppotaGameSDK.getInstance().**setHideWelcomeView(true)**.configure(activity,sdkCallback);
 
 
 	Note.
@@ -372,11 +372,11 @@ Check whether user is logged-in or not : `AppotaGameSDK.getInstance().isUserLogg
 ### [2.5. Push Notifications](#header25)
 Set push notification:
 
-	AppotaGameSDK.getInstance().setPushDeviceToken("device_token_for_push_notification").init(activity,sdkCallback);
+	AppotaGameSDK.getInstance().setPushDeviceToken("device_token_for_push_notification").configure(activity,sdkCallback);
 
 Set push notification to a group:
 	
-	AppotaGameSDK.getInstance().setPushGroup("device_tokens(group1,group2....)").init(activity,sdkCallback);
+	AppotaGameSDK.getInstance().setPushGroup("device_tokens(group1,group2....)").configure(activity,sdkCallback);
 
 ### [2.6. Analytics](#header26)
 
