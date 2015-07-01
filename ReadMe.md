@@ -37,6 +37,8 @@ Version 4 of the Appota Game for Android has published in this reposity and in <
 
 [3. Exception](#3-exception)
 
+[4. Other functions](#4-other-functions)
+
 
 ## [1. Import Appota SDK4](#header1)
 
@@ -427,6 +429,17 @@ Here are exceptions:
 	If you're using Crashlytics or other crash reporting but you want to using Apota exception handler of SDK call autoCatchException method (default auto catch exception if you are not using any crash reporting):
 
 	`AppotaGameSDK.getInstance().autoCatchException();`
+
+## 4. Other functions
+
+4.1 Hide/show SDK floating button:
+
+`AppotaGameSDK.getInstance().setSDKButtonVisibility(boolean)`
+
+
+Default is true.
+
+
 
 
 ## Change logs - Upgrade from SDK version 3 to version 4:
