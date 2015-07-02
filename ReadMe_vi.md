@@ -5,39 +5,39 @@ Phiên bản 4 SDK Game cho Android của Appota đã được cập nhật tạ
 
 [*(Những thay đổi - cập nhật từ phiên bản SDK 3 lên 4 <- click liên kết này*)](#change-logs---upgrade-from-sdk-version-3-to-version-4)
 
-[1. Import Appota SDK 4 vào ứng dụng](#1-import-appota-sdk4)
+[1. Import Appota SDK 4 vào ứng dụng](#1-import-appota-sdk4-vào-ứng-dụng)
 
-[2. Những APIs phía client](#2-client-apis)
+[2. Những APIs phía client](#2-những-apis-phía-client)
  
-[2.1. Khởi tạo Appota SDK4 trong project](#21-init-sdk-4)
+[2.1. Khởi tạo Appota SDK4 trong project](#21-khởi-tạo-appota-sdk4-trong-project)
 
-[2.2. Cấu hình SDK](#2-2-configure-sdk)
+[2.2. Cấu hình SDK](#22-cấu-hình-sdk)
 
-[2.3. Các chức năng liên quan đến người dùng](#2-3users)
+[2.3. Các chức năng liên quan đến người dùng](#23-các-chức-năng-liên-quan-đến-người-dùng)
 
-[2.3.1. Đăng ký](#231-register)
+[2.3.1. Đăng ký](#231-Đăng-ký)
 
-[2.3.2. Đăng nhập](#232-login)
+[2.3.2. Đăng nhập](#232-Đăng-nhập)
 
-[2.3.3. Hiển thị màn hình thông tin người dùng](#233-show-user-information)
+[2.3.3. Hiển thị màn hình thông tin người dùng](#233-hiển-thị-màn-hình-thông-tin-người-dùng)
 
-[2.3.4. Truy xuất thông tin người dùng](#234-get-user-information)
+[2.3.4. Truy xuất thông tin người dùng](#234-truy-xuất-thông-tin-người-dùng)
 
-[2.3.5. Đăng xuất](#235-logout)
+[2.3.5. Đăng xuất](#235-Đăng-xuất)
 
-[2.3.6. Mời bạn bè từ Facebook chơi game](#236-invite-facebook-friends)
+[2.3.6. Mời bạn bè từ Facebook chơi game](#236-mời-bạn-bè-facebook-chơi-game)
 
-[2.3.7. Phiên đăng nhập](#237-login-session)
+[2.3.7. Phiên đăng nhập](#237-phiên-đăng-nhập)
 
-[2.4. Các chức năng liên quan đến thanh toán](#24-payment)
+[2.4. Các chức năng liên quan đến thanh toán](#24-các-chức-năng-liên-quan-đến-thanh-toán)
 
-[2.5. Các chức năng liên quan đến push notification](#25-push-notifications)
+[2.5. Các chức năng liên quan đến push notification](#25-các-chức-năng-liên-quan-đến-push-notification)
 
-[2.6. Các chức năng liên quan đến thống kê](#26-analytics)
+[2.6. Các chức năng liên quan đến thống kê](#26-các-chức-năng-liên-quan-đến-thống-kê)
 
-[3. Xử lý - Đảm nhiệm lỗi crash ứng dụng](#3-exception)
+[3. Xử lý - Đảm nhiệm lỗi crash ứng dụng](#3-xử-lý---Đảm-nhiệm-lỗi-crash-ứng-dụng)
 
-[4. Những chức năng khác](#4-other-functions)
+[4. Những phương thức khác](#4-những-phương-thức-khác)
 
 
 ## [1. Import Appota SDK4 vào ứng dụng](#header1)
@@ -109,7 +109,7 @@ Phiên bản 4 SDK Game cho Android của Appota đã được cập nhật tạ
 	```
 	
 
-	[Xem chi tiết về AppotaPaymentResult tại 2.4.c](#24-payment)	
+	[Xem chi tiết về AppotaPaymentResult tại 2.4.c](#24-các-chức-năng-liên-quan-đến-thanh-toán)	
 
 
 	Ví dụ:
@@ -209,7 +209,7 @@ Phiên bản 4 SDK Game cho Android của Appota đã được cập nhật tạ
 
 >- SDK cung cấp những phương thức để tạo, đăng nhập tài khoản(dùng Facebook,Google & Twitter) trên hệ thống Appota vì vậy mà người dùng có thể thực hiện thanh toán bằng tài khoản này.
 >
->- **AppotaSDKCallback** là listener khi đăng ký tài khoản thành công, đăng nhập thành công cũng như các sự kiện trên giao dịch thanh toán([Chi tiết AppotaSDKCallback ở 2.1 ](#2-1-kh-i-t-o-appota-sdk4-trong-project)).
+>- **AppotaSDKCallback** là listener khi đăng ký tài khoản thành công, đăng nhập thành công cũng như các sự kiện trên giao dịch thanh toán([Chi tiết AppotaSDKCallback ở 2.1 ](#21-khởi-tạo-appota-sdk4-trong-project)).
 >
 
 #### [2.3.1. Đăng ký](#header231)
@@ -326,7 +326,7 @@ Kiểm tra trạng thái người chơi đã đăng nhập hay chưa : `AppotaGa
 >2.Payment State (state) :
 >
 >-Payment state là một trường mở rộng. Nó được gán giá trị vởi người phát triển (developer)(giá trị rỗng khi trả về nếu không được gán) trước khi tạo bất cứ thanh toán nào và được trả về sau khi giao dịch thành công. Bạn có thể dùng nó để kiểm tra, xác thực, so sánh..
->Bạn phải bổ sung trong phương thức getPaymentState(AppotaPaymentPackage) để cài đặt giá trị của nó khi khởi tạo SDK.([xem ví dụ ở 2.1 ](#2-1-kh-i-t-o-appota-sdk4-trong-project)).
+>Bạn phải bổ sung trong phương thức getPaymentState(AppotaPaymentPackage) để cài đặt giá trị của nó khi khởi tạo SDK.([xem ví dụ ở 2.1 ](#21-khởi-tạo-appota-sdk4-trong-project)).
 
 
 - a. Hiển thị hộp thoại thanh toán:
@@ -342,7 +342,7 @@ Kiểm tra trạng thái người chơi đã đăng nhập hay chưa : `AppotaGa
 
 	`AppotaGameSDK.getInstance().showPaymentViewWithPackageID(String packageID);`
 
-	- packageID : ID của gói thanh toán. Nếu bạn muốn chỉ hiển thị một gói thanh toán, truyền ID của gói khi gọi makePayment hoặc truyền null/empty để hiển thị tất cả các gọi thanh toán. ID gói thanh toán sẽ được nhận lại tại  [getPaymentState(String packageID)](#2-1-kh-i-t-o-appota-sdk4-trong-project)
+	- packageID : ID của gói thanh toán. Nếu bạn muốn chỉ hiển thị một gói thanh toán, truyền ID của gói khi gọi makePayment hoặc truyền null/empty để hiển thị tất cả các gọi thanh toán. ID gói thanh toán sẽ được nhận lại tại  [getPaymentState(String packageID)](#21-khởi-tạo-appota-sdk4-trong-project)
 		
 
 - b. MNhững phương thức để hiển thị một phương thức thanh toán xác định(chỉ riêng SMS, Phone Card, Bank,..) không còn dùng trong SDK 4.
@@ -409,7 +409,7 @@ Cài đặt push notification tới một nhóm:
 -value : Một giá trị mà bạn muốn dùng để cung cấp dữ liệu kiểu số về sự kiến người dùng(như là số lần sự kiện xảy ra,..)
 
 
-## 3. Xử lý - Đảm nhiệm lỗi crash ứng dụng##
+## [3. Xử lý - Đảm nhiệm lỗi crash ứng dụng](#header3)
 
 
 AppotaGameSDK sẽ ném ra những ngoại lệ nếu cấu hình SDK không đủ hoặc không chính xác.
@@ -436,7 +436,7 @@ Dưới đây là tên những ngoại lệ:
 
 	Nếu bạn muốn xem log crash ở cửa sổ LogCat trong quá trình coding, hãy tạm tắt chức chăng tự động nhận crash của SDK: `AppotaGameSDK.getInstance().ignoreAutoCatchException();`
 
-## 4. Những phương thức khác:
+## [4. Những phương thức khác:](#header3)
 
 4.1 Ẩn/Hiện nút nổi của SDK:
 
@@ -538,7 +538,7 @@ thành:
 
 	
 
-**AppotaSDKCallback** là listener khi đăng ký tài khoản thành công, đăng nhập thành công cũng như các sự kiện trên giao dịch thanh toán([Chi tiết AppotaSDKCallback ở 2.1 ](#2-1-kh-i-t-o-appota-sdk4-trong-project)).
+**AppotaSDKCallback** là listener khi đăng ký tài khoản thành công, đăng nhập thành công cũng như các sự kiện trên giao dịch thanh toán([Chi tiết AppotaSDKCallback ở 2.1 ](#21-khởi-tạo-appota-sdk4-trong-project)).
 
 
 b. Kết thúc SDK, dọn dẹp tài nguyên:
