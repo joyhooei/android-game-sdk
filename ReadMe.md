@@ -102,6 +102,8 @@ Version 4 of the Appota Game for Android has published in this reposity and in <
 		public void onPaymentError(String errorMessage);
 
 		public void onCloseLoginView();
+
+		public void onPackageSelected(String packageID);
 		
 	}
 	```
@@ -430,6 +432,8 @@ Here are exceptions:
 
 	`AppotaGameSDK.getInstance().autoCatchException();`
 
+	You may want to see crash log in logcat while coding, turn off auto catch exception: `AppotaGameSDK.getInstance().ignoreAutoCatchException();`
+
 ## 4. Other functions
 
 4.1 Hide/show SDK floating button:
@@ -570,17 +574,8 @@ to:
 
 	AppotaGameSDK.getInstance().showUserInfoView();
 
-f. Logout:
 
-	AppotaGameSDK.getInstance().logout();
-
-to:
-
-	AppotaGameSDK.getInstance().logout(boolean state);
-
-	Set state is true if you want to show login dialog after logout successfully.
-
-g.	Close payment dialog:
+f.	Close payment dialog:
 
 	AppotaGameSDK.getInstance().closePayment();
 
@@ -588,7 +583,7 @@ to:
 
 	AppotaGameSDK.getInstance().closePaymentView();
 
-h.	
+g.	Check whether user has been logged in or not.
 
 	AppotaGameSDK.getInstance().checkUserLogin();
 
@@ -599,5 +594,5 @@ to:
 
 1.2.2 NO longer use class AppotaReceiver, use AppotaSDKCallback instead.
 
-1.2.3 Many function added.(see above).
+1.2.3 Many functions added.(see above).
 
