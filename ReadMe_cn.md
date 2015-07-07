@@ -3,7 +3,7 @@
 Appota Game 安卓的SDK4已展开并在开发人员预览版。第3版本还在 [appota-android-game-sdk3](https://github.com/appota/android-game-sdk3) repository.
 
 
-[*( SDK3更新到SDK4更改->请点击查看*)](#change-logs---upgrade-from-sdk-version-3-to-version-4)
+[*( SDK3更新到SDK4更改->请点击查看*)](#sdk3到sdk4的升级更改)
 
 [1. 导入appota SDK4 到应用](#1-导入appota-sdk4-到应用)
 
