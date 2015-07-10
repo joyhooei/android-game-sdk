@@ -205,6 +205,41 @@ Phiên bản 4 SDK Game cho Android của Appota đã được cập nhật tạ
 
 		Nếu những thẻ này không được khai báo thì cấu hình Twitter sẽ được lấy bởi của chính Appota.
 
+	* Khai báo dùng cho Push notification
+
+	
+    	`<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />`
+    	`<permission android:name="your_package_name.permission.C2D_MESSAGE" android:protectionLevel="signature" />`
+
+    	`<uses-permission android:name="your_package_name.permission.C2D_MESSAGE" />`
+    	`<uses-permission android:name="android.permission.WAKE_LOCK" />`
+		
+
+        `<service android:name="com.appota.gamesdk.v4.widget.PushHandler" />`
+
+        `<receiver
+            android:name="com.appota.gamesdk.v4.network.GCMBroadcastReceiver"`
+            `android:permission="com.google.android.c2dm.permission.SEND" >`
+
+        `<intent-filter>`
+
+        `<!-- Receives the actual messages. -->`
+
+        `<action android:name="com.google.android.c2dm.intent.RECEIVE" />`
+
+        `<!-- Receives the registration id. -->`
+
+        `<action android:name="com.google.android.c2dm.intent.REGISTRATION" />`
+
+
+      	`<category android:name="your_application_package_name" />`
+
+        `</intent-filter>`
+
+
+      	`</receiver>`
+        
+
 ### [2.3. Các chức năng liên quan đến người dùng](#users)
 
 >- SDK cung cấp những phương thức để tạo, đăng nhập tài khoản(dùng Facebook,Google & Twitter) trên hệ thống Appota vì vậy mà người dùng có thể thực hiện thanh toán bằng tài khoản này.
@@ -376,9 +411,6 @@ Kiểm tra trạng thái người chơi đã đăng nhập hay chưa : `AppotaGa
 		để cài đặt thông tin của người dùng trong trò chơi.
 
 ### [2.5. Các chức năng liên quan đến push notification](#header25)
-Cài đặt push notification: (tùy chọn, mặc định đã được lấy bởi SDK)
-
-	AppotaGameSDK.getInstance().setPushDeviceToken("device_token_for_push_notification").configure(activity,sdkCallback);
 
 Cài đặt push notification tới một nhóm:
 	

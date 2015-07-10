@@ -204,7 +204,40 @@ Appota Game 安卓的SDK4已展开并在开发人员预览版。第3版本还在
 
 		![delare_activity_metadata](docs/images/delare_activity_metadata.PNG)
 
+	* Push Notification:
 
+	
+    	`<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />`
+    	`<permission android:name="your_package_name.permission.C2D_MESSAGE" android:protectionLevel="signature" />`
+
+    	`<uses-permission android:name="your_package_name.permission.C2D_MESSAGE" />`
+    	`<uses-permission android:name="android.permission.WAKE_LOCK" />`
+		
+
+        `<service android:name="com.appota.gamesdk.v4.widget.PushHandler" />`
+
+        `<receiver
+            android:name="com.appota.gamesdk.v4.network.GCMBroadcastReceiver"`
+            `android:permission="com.google.android.c2dm.permission.SEND" >`
+
+        `<intent-filter>`
+
+        `<!-- Receives the actual messages. -->`
+
+        `<action android:name="com.google.android.c2dm.intent.RECEIVE" />`
+
+        `<!-- Receives the registration id. -->`
+
+        `<action android:name="com.google.android.c2dm.intent.REGISTRATION" />`
+
+
+      	`<category android:name="your_application_package_name" />`
+
+        `</intent-filter>`
+
+
+      	`</receiver>`
+        
 
 ### [2.3. 用户相关功能](#users)
 
@@ -372,9 +405,6 @@ Appota Game 安卓的SDK4已展开并在开发人员预览版。第3版本还在
 		用来配置游戏里的玩家信息.
 
 ### [2.5. Push Notifications](#header25)
-配置 push notification: (可选，默认已经采取SDK)
-
-	AppotaGameSDK.getInstance().setPushDeviceToken("device_token_for_push_notification").configure(activity,sdkCallback);
 
 配置推送通知到一群：
 	
