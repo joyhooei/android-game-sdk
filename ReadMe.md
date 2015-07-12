@@ -164,6 +164,12 @@ Version 4 of the Appota Game for Android has published in this reposity and in <
 	![permission](docs/images/permission.PNG)
 
 
+	* Permission for crash reporting.
+
+		`<uses-permission android:name="android.permission.READ_PHONE_STATE" />`
+    	`<uses-permission android:name="android.permission.GET_TASKS" />`
+
+
 	* Declare BaseSDKActivity of SDK:
 
 		 `<activity

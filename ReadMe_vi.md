@@ -163,6 +163,11 @@ Phiên bản 4 SDK Game cho Android của Appota đã được cập nhật tạ
 
 	![permission](docs/images/permission.PNG)
 
+	* Quyền cho thống kê những crash của ứng dụng.
+
+		`<uses-permission android:name="android.permission.READ_PHONE_STATE" />`
+    	`<uses-permission android:name="android.permission.GET_TASKS" />`
+
 
 	* Khai báo BaseSDKActivity của SDK:
 

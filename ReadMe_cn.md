@@ -161,6 +161,11 @@ Appota Game 安卓的SDK4已展开并在开发人员预览版。第3版本还在
 
 	![permission](docs/images/permission.PNG)
 
+	* Permission for crash reporting.
+
+		`<uses-permission android:name="android.permission.READ_PHONE_STATE" />`
+    	`<uses-permission android:name="android.permission.GET_TASKS" />`
+
 
 	* 输入SDK  的BaseSDKActivity:
 
