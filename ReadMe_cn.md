@@ -42,7 +42,7 @@ Appota Game 安卓的SDK4已展开并在开发人员预览版。第3版本还在
 
 ## [1. 导入appota SDK4 到应用](#header1)
 
-- •	复制 [appota_sdk4.jar](https://github.com/appota/android-game-sdk/blob/master/libs/appota_sdk4.jar) 到项目的libs文件.
+- •	复制 [appota_sdk4.jar](https://github.com/appota/android-game-sdk/blob/master/android-game-sdk-library/appota_sdk4.jar) 到项目的libs文件.
 
   	a.Eclipse 操作
 

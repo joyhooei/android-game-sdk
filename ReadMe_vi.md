@@ -42,7 +42,7 @@ Phiên bản 4 SDK Game cho Android của Appota đã được cập nhật tạ
 
 ## [1. Import Appota SDK4 vào ứng dụng](#header1)
 
-- Sao chép tệp tin [appota_sdk4.jar](https://github.com/appota/android-game-sdk/blob/master/libs/appota_sdk4.jar) vào thư mục libs của project.
+- Sao chép tệp tin [appota_sdk4.jar](https://github.com/appota/android-game-sdk/blob/master/android-game-sdk-library/appota_sdk4.jar) vào thư mục libs của project.
 
   	a.Làm việc với Eclipse
 

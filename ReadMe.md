@@ -42,7 +42,7 @@ Version 4 of the Appota Game for Android has published in this reposity and in <
 
 ## [1. Import Appota SDK4](#header1)
 
-- Copy [appota_sdk4.jar](https://github.com/appota/android-game-sdk/blob/master/libs/appota_sdk4.jar) into libs folder.
+- Copy [appota_sdk4.jar](https://github.com/appota/android-game-sdk/blob/master/android-game-sdk-library/appota_sdk4.jar) into libs folder.
 
   	a.Working with Eclipse
 
