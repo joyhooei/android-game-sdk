@@ -480,6 +480,9 @@ Here are exceptions:
 Default is true.
 
 
+4.2 Use small SDK floating button:
+
+`AppotaGameSDK.getInstance().useSmallSDKButton()`
 
 
 ## Change logs - Upgrade from SDK version 3 to version 4:

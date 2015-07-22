@@ -472,6 +472,10 @@ Appota Game 安卓的SDK4已展开并在开发人员预览版。第3版本还在
 
 
 
+4.2 Use small SDK floating button:
+
+`AppotaGameSDK.getInstance().useSmallSDKButton()`
+
 
 ## SDK3到SDK4的升级更改:
 

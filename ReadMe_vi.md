@@ -484,6 +484,10 @@ Mặc định được cấu hình là true.
 
 
 
+4.2 Dùng kích thước nhỏ của nút SDK:
+
+`AppotaGameSDK.getInstance().useSmallSDKButton()`
+
 
 ## Những thay đổi - nâng cấp từ SDK 3 lên SDK 4:
 
