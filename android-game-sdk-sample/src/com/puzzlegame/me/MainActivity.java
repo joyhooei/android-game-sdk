@@ -99,7 +99,7 @@ public class MainActivity extends Activity {
     
     public void logOut(View view){
     	AppotaGameSDK.getInstance().sendEvent("On Click", "Click logout button", "");
-    	AppotaGameSDK.getInstance().logout(false);
+    	AppotaGameSDK.getInstance().logout();
     }
 
     public void makePayment(View view){
@@ -165,6 +165,11 @@ public class MainActivity extends Activity {
 
 		@Override
 		public void onPackageSelected(String packageID) {
+			
+		}
+
+		@Override
+		public void onClosePaymentView() {
 			
 		}
 	}

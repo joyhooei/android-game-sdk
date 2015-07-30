@@ -42,7 +42,7 @@ Phiên bản 4 SDK Game cho Android của Appota đã được cập nhật tạ
 
 ## [1. Import Appota SDK4 vào ứng dụng](#header1)
 
-- Sao chép tệp tin [appota_sdk4.jar](https://github.com/appota/android-game-sdk/blob/master/libs/appota_sdk4.jar) vào thư mục libs của project.
+- Sao chép tệp tin [appota_sdk4.jar](https://github.com/appota/android-game-sdk/blob/master/android-game-sdk-library/appota_sdk4.jar) vào thư mục libs của project.
 
   	a.Làm việc với Eclipse
 
@@ -163,6 +163,11 @@ Phiên bản 4 SDK Game cho Android của Appota đã được cập nhật tạ
 
 	![permission](docs/images/permission.PNG)
 
+	* Quyền cho thống kê những crash của ứng dụng.
+
+		`<uses-permission android:name="android.permission.READ_PHONE_STATE" />`
+    	`<uses-permission android:name="android.permission.GET_TASKS" />`
+
 
 	* Khai báo BaseSDKActivity của SDK:
 
@@ -204,6 +209,41 @@ Phiên bản 4 SDK Game cho Android của Appota đã được cập nhật tạ
 		![delare_activity_metadata](docs/images/delare_activity_metadata.PNG)
 
 		Nếu những thẻ này không được khai báo thì cấu hình Twitter sẽ được lấy bởi của chính Appota.
+
+	* Khai báo dùng cho Push notification
+
+	
+    	`<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />`
+    	`<permission android:name="your_package_name.permission.C2D_MESSAGE" android:protectionLevel="signature" />`
+
+    	`<uses-permission android:name="your_package_name.permission.C2D_MESSAGE" />`
+    	`<uses-permission android:name="android.permission.WAKE_LOCK" />`
+		
+
+        `<service android:name="com.appota.gamesdk.v4.widget.PushHandler" />`
+
+        `<receiver
+            android:name="com.appota.gamesdk.v4.network.GCMBroadcastReceiver"`
+            `android:permission="com.google.android.c2dm.permission.SEND" >`
+
+        `<intent-filter>`
+
+        `<!-- Receives the actual messages. -->`
+
+        `<action android:name="com.google.android.c2dm.intent.RECEIVE" />`
+
+        `<!-- Receives the registration id. -->`
+
+        `<action android:name="com.google.android.c2dm.intent.REGISTRATION" />`
+
+
+      	`<category android:name="your_application_package_name" />`
+
+        `</intent-filter>`
+
+
+      	`</receiver>`
+        
 
 ### [2.3. Các chức năng liên quan đến người dùng](#users)
 
@@ -376,9 +416,6 @@ Kiểm tra trạng thái người chơi đã đăng nhập hay chưa : `AppotaGa
 		để cài đặt thông tin của người dùng trong trò chơi.
 
 ### [2.5. Các chức năng liên quan đến push notification](#header25)
-Cài đặt push notification: (tùy chọn, mặc định đã được lấy bởi SDK)
-
-	AppotaGameSDK.getInstance().setPushDeviceToken("device_token_for_push_notification").configure(activity,sdkCallback);
 
 Cài đặt push notification tới một nhóm:
 	
@@ -446,6 +483,10 @@ Dưới đây là tên những ngoại lệ:
 Mặc định được cấu hình là true.
 
 
+
+4.2 Dùng kích thước nhỏ của nút SDK:
+
+`AppotaGameSDK.getInstance().useSmallSDKButton()`
 
 
 ## Những thay đổi - nâng cấp từ SDK 3 lên SDK 4:

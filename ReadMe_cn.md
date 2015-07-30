@@ -3,46 +3,46 @@
 Appota Game 安卓的SDK4已展开并在开发人员预览版。第3版本还在 [appota-android-game-sdk3](https://github.com/appota/android-game-sdk3) repository.
 
 
-[*( SDK3更新到SDK4更改->请点击查看*)](#change-logs---upgrade-from-sdk-version-3-to-version-4)
+[*( SDK3更新到SDK4更改->请点击查看*)](#sdk3到sdk4的升级更改)
 
-[1. 导入appota SDK4 到应用](#1-import-appota-sdk4)
+[1. 导入appota SDK4 到应用](#1-导入appota-sdk4-到应用)
 
-[2. 客户端的APIs](#2-client-apis)
+[2. 客户端的APIs](#2-客户端的apis)
  
-[2.1. 初始化 Appota SDK 4](#21-init-sdk-4)
+[2.1. 初始化 Appota SDK 4](#21-初始化appota-sdk-4)
 
-[2.2. SDK 配置](#2-2-configure-sdk)
+[2.2. SDK 配置](#22-sdk配置)
 
-[2.3. 用户相关功能](#2-3users)
+[2.3. 用户相关功能](#23-用户相关功能)
 
-[2.3.1. Register](#231-register)
+[2.3.1. Register](#231-注册)
 
-[2.3.2. Login](#232-login)
+[2.3.2. Login](#232-登录)
 
-[2.3.3. 显示用户信息界面](#233-show-user-information)
+[2.3.3. 显示用户信息界面](#233--显示用户信息)
 
-[2.3.4. 导出用户信息](#234-get-user-information)
+[2.3.4. 导出用户信息](#234-导出用户信息)
 
-[2.3.5. 退出](#235-logout)
+[2.3.5. 退出](#235-退出)
 
-[2.3.6. 邀请Facebook的朋友玩游戏](#236-invite-facebook-friends)
+[2.3.6. 邀请Facebook的朋友玩游戏](#236-邀请facebook的朋友玩游戏)
 
-[2.3.7. 登录会话](#237-login-session)
+[2.3.7. 登录会话](#237-登录会话)
 
-[2.4. 支付相关功能](#24-payment)
+[2.4. 支付相关功能](#24-支付相关功能)
 
 [2.5. 推送通知（ push notification）相关功能](#25-push-notifications)
 
-[2.6. 统计相关功能](#26-analytics)
+[2.6. 统计相关功能](#26-统计相关功能)
 
 [3. 处理-担任应用Crash错误](#3-exception)
 
-[4. 其他方式](#4-other-functions)
+[4. 其他方式](#sdk3到sdk4的升级更改)
 
 
 ## [1. 导入appota SDK4 到应用](#header1)
 
-- •	复制 [appota_sdk4.jar](https://github.com/appota/android-game-sdk/blob/master/libs/appota_sdk4.jar) 到项目的libs文件.
+- •	复制 [appota_sdk4.jar](https://github.com/appota/android-game-sdk/blob/master/android-game-sdk-library/appota_sdk4.jar) 到项目的libs文件.
 
   	a.Eclipse 操作
 
@@ -109,7 +109,7 @@ Appota Game 安卓的SDK4已展开并在开发人员预览版。第3版本还在
 	```
 	
 
-	[AppotaPaymentResult 在2.4.c详细查看](#24-payment)	
+	[AppotaPaymentResult 在2.4.c详细查看](#24-支付相关功能)	
 
 
 	例如:
@@ -161,6 +161,11 @@ Appota Game 安卓的SDK4已展开并在开发人员预览版。第3版本还在
 
 	![permission](docs/images/permission.PNG)
 
+	* Permission for crash reporting.
+
+		`<uses-permission android:name="android.permission.READ_PHONE_STATE" />`
+    	`<uses-permission android:name="android.permission.GET_TASKS" />`
+
 
 	* 输入SDK  的BaseSDKActivity:
 
@@ -204,13 +209,46 @@ Appota Game 安卓的SDK4已展开并在开发人员预览版。第3版本还在
 
 		![delare_activity_metadata](docs/images/delare_activity_metadata.PNG)
 
+	* Push Notification:
 
+	
+    	`<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />`
+    	`<permission android:name="your_package_name.permission.C2D_MESSAGE" android:protectionLevel="signature" />`
+
+    	`<uses-permission android:name="your_package_name.permission.C2D_MESSAGE" />`
+    	`<uses-permission android:name="android.permission.WAKE_LOCK" />`
+		
+
+        `<service android:name="com.appota.gamesdk.v4.widget.PushHandler" />`
+
+        `<receiver
+            android:name="com.appota.gamesdk.v4.network.GCMBroadcastReceiver"`
+            `android:permission="com.google.android.c2dm.permission.SEND" >`
+
+        `<intent-filter>`
+
+        `<!-- Receives the actual messages. -->`
+
+        `<action android:name="com.google.android.c2dm.intent.RECEIVE" />`
+
+        `<!-- Receives the registration id. -->`
+
+        `<action android:name="com.google.android.c2dm.intent.REGISTRATION" />`
+
+
+      	`<category android:name="your_application_package_name" />`
+
+        `</intent-filter>`
+
+
+      	`</receiver>`
+        
 
 ### [2.3. 用户相关功能](#users)
 
 >- SDK提供在Appota系统上的创建，登录账号（用Facebook,Google & Twitter）各种方式，所以用户可通过该账号来进行支付
 >
->- **AppotaSDKCallback** 接受账号注册成功、登陆成功及支付交易活动的信息（具体查看2.1的AppotaSDKCallback ） ([detail AppotaSDKCallback at 2.1 ](#21-init-sdk-4)).
+>- **AppotaSDKCallback** 接受账号注册成功、登陆成功及支付交易活动的信息（具体查看2.1的AppotaSDKCallback ） ([detail AppotaSDKCallback at 2.1 ](#21-初始化appota-sdk-4)).
 >
 
 #### [2.3.1. 注册](#header231)
@@ -325,7 +363,7 @@ Appota Game 安卓的SDK4已展开并在开发人员预览版。第3版本还在
 >2.Payment State (state) :
 >
 >-Payment state是扩大 场。作出任何支付之前它的价值被分配给研发人（发还时若为分，价值为空），交易成功后就返还该价值。你可以用它来检查、验证、对比...
->当初始化SDK, 你要补充到 getPaymentState(AppotaPaymentPackage) 方式来配置它的价值。([查看2.1的比列](#21-init-sdk-4)).
+>当初始化SDK, 你要补充到 getPaymentState(AppotaPaymentPackage) 方式来配置它的价值。([查看2.1的比列](#21-初始化appota-sdk-4)).
 
 
 - a. 显示支付pop-up: 显示所有支付包:
@@ -338,7 +376,7 @@ Appota Game 安卓的SDK4已展开并在开发人员预览版。第3版本还在
 
 	`AppotaGameSDK.getInstance().showPaymentViewWithPackageID(String packageID);`
 
-	- packageID : 支付包的ID。如果你要只显示一个支付包，当调用 makePayment时传输支付包的ID或者 null/empty 来显示所有支付包。支付ID将在 [getPaymentState(String packageID)](#21-init-sdk-4)
+	- packageID : 支付包的ID。如果你要只显示一个支付包，当调用 makePayment时传输支付包的ID或者 null/empty 来显示所有支付包。支付ID将在 [getPaymentState(String packageID)](#21-初始化appota-sdk-4)
 		
 
 - b. SDK4不再显示 确定支付方式;
@@ -372,9 +410,6 @@ Appota Game 安卓的SDK4已展开并在开发人员预览版。第3版本还在
 		用来配置游戏里的玩家信息.
 
 ### [2.5. Push Notifications](#header25)
-配置 push notification: (可选，默认已经采取SDK)
-
-	AppotaGameSDK.getInstance().setPushDeviceToken("device_token_for_push_notification").configure(activity,sdkCallback);
 
 配置推送通知到一群：
 	
@@ -436,6 +471,10 @@ Appota Game 安卓的SDK4已展开并在开发人员预览版。第3版本还在
 默认配置为 true.
 
 
+
+4.2 Use small SDK floating button:
+
+`AppotaGameSDK.getInstance().useSmallSDKButton()`
 
 
 ## SDK3到SDK4的升级更改:
@@ -528,7 +567,7 @@ a.  初始化SDK 3:
 
 	
 
-**AppotaSDKCallback** 接受账号注册成功、登陆成功及支付交易活动的信息 ([具体查看2.1的AppotaSDKCallback](#21-init-sdk-4)).
+**AppotaSDKCallback** 接受账号注册成功、登陆成功及支付交易活动的信息 ([具体查看2.1的AppotaSDKCallback](#21-初始化appota-sdk-4)).
 
 
 b. 结束SDK, 清理资源:

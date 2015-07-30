@@ -42,7 +42,7 @@ Version 4 of the Appota Game for Android has published in this reposity and in <
 
 ## [1. Import Appota SDK4](#header1)
 
-- Copy [appota_sdk4.jar](https://github.com/appota/android-game-sdk/blob/master/libs/appota_sdk4.jar) into libs folder.
+- Copy [appota_sdk4.jar](https://github.com/appota/android-game-sdk/blob/master/android-game-sdk-library/appota_sdk4.jar) into libs folder.
 
   	a.Working with Eclipse
 
@@ -164,6 +164,12 @@ Version 4 of the Appota Game for Android has published in this reposity and in <
 	![permission](docs/images/permission.PNG)
 
 
+	* Permission for crash reporting.
+
+		`<uses-permission android:name="android.permission.READ_PHONE_STATE" />`
+    	`<uses-permission android:name="android.permission.GET_TASKS" />`
+
+
 	* Declare BaseSDKActivity of SDK:
 
 		 `<activity
@@ -207,7 +213,40 @@ Version 4 of the Appota Game for Android has published in this reposity and in <
 
 		![delare_activity_metadata](docs/images/delare_activity_metadata.PNG)
 
+	* Declare for Push notification
+		
+		
+    	`<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />`
+    	`<permission android:name="your_package_name.permission.C2D_MESSAGE" android:protectionLevel="signature" />`
 
+    	`<uses-permission android:name="your_package_name.permission.C2D_MESSAGE" />`
+    	`<uses-permission android:name="android.permission.WAKE_LOCK" />`
+		
+
+        `<service android:name="com.appota.gamesdk.v4.widget.PushHandler" />`
+
+        `<receiver
+            android:name="com.appota.gamesdk.v4.network.GCMBroadcastReceiver"`
+            `android:permission="com.google.android.c2dm.permission.SEND" >`
+
+        `<intent-filter>`
+
+        `<!-- Receives the actual messages. -->`
+
+        `<action android:name="com.google.android.c2dm.intent.RECEIVE" />`
+
+        `<!-- Receives the registration id. -->`
+
+        `<action android:name="com.google.android.c2dm.intent.REGISTRATION" />`
+
+
+      	`<category android:name="your_application_package_name" />`
+
+        `</intent-filter>`
+
+
+      	`</receiver>`
+        
 
 ### [2.3. Users](#users)
 
@@ -374,9 +413,6 @@ Check whether user is logged-in or not : `AppotaGameSDK.getInstance().isUserLogg
 		for creating charging money system on mobile web.
 
 ### [2.5. Push Notifications](#header25)
-Set push notification:
-
-	AppotaGameSDK.getInstance().setPushDeviceToken("device_token_for_push_notification").configure(activity,sdkCallback);
 
 Set push notification to a group:
 	
@@ -444,6 +480,9 @@ Here are exceptions:
 Default is true.
 
 
+4.2 Use small SDK floating button:
+
+`AppotaGameSDK.getInstance().useSmallSDKButton()`
 
 
 ## Change logs - Upgrade from SDK version 3 to version 4:
