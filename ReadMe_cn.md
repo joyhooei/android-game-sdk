@@ -476,6 +476,9 @@ Appota Game 安卓的SDK4已展开并在开发人员预览版。第3版本还在
 
 `AppotaGameSDK.getInstance().useSmallSDKButton()`
 
+4.3 Switch account:
+
+`AppotaGameSDK.getInstance().switchAccount();`
 
 ## SDK3到SDK4的升级更改:
 

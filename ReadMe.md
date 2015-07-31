@@ -484,6 +484,10 @@ Default is true.
 
 `AppotaGameSDK.getInstance().useSmallSDKButton()`
 
+4.3 Switch account:
+
+`AppotaGameSDK.getInstance().switchAccount();`
+
 
 ## Change logs - Upgrade from SDK version 3 to version 4:
 

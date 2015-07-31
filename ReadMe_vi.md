@@ -488,6 +488,9 @@ Mặc định được cấu hình là true.
 
 `AppotaGameSDK.getInstance().useSmallSDKButton()`
 
+4.3 Chuyển sang tài khoản khác:
+
+`AppotaGameSDK.getInstance().switchAccount();`
 
 ## Những thay đổi - nâng cấp từ SDK 3 lên SDK 4:
 
