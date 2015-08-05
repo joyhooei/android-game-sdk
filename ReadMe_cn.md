@@ -87,23 +87,23 @@ Appota Game 安卓的SDK4已展开并在开发人员预览版。第3版本还在
 * 在应用打开后第一个activity 的onCreate调用AppotaGameSDK.getInstance().configure(activity,appotaSDKCallback)方式.
 	
 	```java
-	public interface AppotaGameSDKCallback {
+	public abstract class AppotaGameSDKCallback {
 
-		public String getPaymentState(String packageID); // if you don't set specific Payment Package, packageID will be an empty string.
+		public abstract String getPaymentState(String packageId); // if you don't set specific Payment Package, packageID will be an empty string.
 	
-		public void onUserLoginSuccess(AppotaUserLoginResult userInfo);
+		public abstract void onPaymentSuccess(AppotaPaymentResult paymentResult,String packageId);
 
-		public void onUserLoginError(String errorMessage);
+		public abstract void onUserLoginSuccess(AppotaUserLoginResult userInfo);
 	
-		public void onUserLogout(String userName);
+		public abstract void onUserLogout(String userName);
 	
-		public void onPaymentSuccess(AppotaPaymentResult paymentResult,String packageId);
+		public void onPaymentError(String errorMessage){}
 		
-		public void onPaymentError(String errorMessage);
+		public void onPackageSelected(String packageID){}
 
-		public void onCloseLoginView();
+		public void onCloseLoginView(){}
 
-		public void onPackageSelected(String packageID);
+		public void onClosePaymentView(){}
 		
 	}
 	```

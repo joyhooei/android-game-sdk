@@ -87,23 +87,23 @@ Phiên bản 4 SDK Game cho Android của Appota đã được cập nhật tạ
 * Gọi phương thức `AppotaGameSDK.getInstance().configure(activity,appotaSDKCallback)`  trong phương thức onCreate của Activity đầu tiên mở ứng dụng.
 	
 	```java
-	public interface AppotaGameSDKCallback {
+	public abstract class AppotaGameSDKCallback {
 
-		public String getPaymentState(String packageID); // if you don't set specific Payment Package, packageID will be an empty string.
+		public abstract String getPaymentState(String packageId); // if you don't set specific Payment Package, packageID will be an empty string.
 	
-		public void onUserLoginSuccess(AppotaUserLoginResult userInfo);
+		public abstract void onPaymentSuccess(AppotaPaymentResult paymentResult,String packageId);
 
-		public void onUserLoginError(String errorMessage);
+		public abstract void onUserLoginSuccess(AppotaUserLoginResult userInfo);
 	
-		public void onUserLogout(String userName);
+		public abstract void onUserLogout(String userName);
 	
-		public void onPaymentSuccess(AppotaPaymentResult paymentResult,String packageId);
+		public void onPaymentError(String errorMessage){}
 		
-		public void onPaymentError(String errorMessage);
+		public void onPackageSelected(String packageID){}
 
-		public void onCloseLoginView();
+		public void onCloseLoginView(){}
 
-		public void onPackageSelected(String packageID);
+		public void onClosePaymentView(){}
 		
 	}
 	```

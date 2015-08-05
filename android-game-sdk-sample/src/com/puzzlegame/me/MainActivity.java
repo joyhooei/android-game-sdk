@@ -123,9 +123,10 @@ public class MainActivity extends Activity {
     	AppotaGameSDK.getInstance().showPaymentViewWithPackageID("app.pkid.coin100");
     }
     
-	public class MyImplApptaGameSDKCallback implements AppotaGameSDKCallback {
+	public class MyImplApptaGameSDKCallback extends AppotaGameSDKCallback {
 		@Override
 		public String getPaymentState(String packageID) {
+			//My example with using packageID for returning payment state
 			if(!packageID.equals("app.pkid.tym4K")){
 				return "sv-standard-state";
 			}else {
@@ -134,24 +135,20 @@ public class MainActivity extends Activity {
 		}
 
 		@Override
-		public void onUserLoginSuccess(AppotaUserLoginResult userInfo) {
-			
+		public void onPaymentSuccess(AppotaPaymentResult paymentResult,String packageID) {
+			Log.e("PuzzleGame", "onPaymentSuccess:"+paymentResult.toString()+" with packageID:"+packageID);
 		}
 		
 		@Override
-		public void onUserLoginError(String errorMsg) {
-			
-		}
-
+		public void onUserLoginSuccess(AppotaUserLoginResult userInfo) {}
+		
 		@Override
 		public void onUserLogout(String userName) {
 			Log.e("PuzzleGame", "user "+userName+" has logged out..");
 		}
-
+		
 		@Override
-		public void onPaymentSuccess(AppotaPaymentResult paymentResult,String packageID) {
-			Log.e("PuzzleGame", "onPaymentSuccess:"+paymentResult.toString()+" with packageID:"+packageID);
-		}
+		public void onUserLoginError(String errorMessage) {}
 
 		@Override
 		public void onPaymentError(String errorMessage) {
