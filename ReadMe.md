@@ -217,7 +217,7 @@ Version 4 of the Appota Game for Android has published in this reposity and in <
 		
 		
     	`<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />`
-    	`<permission android:name="your_package_name.permission.C2D_MESSAGE" android:protectionLevel="signature" />`
+    	`<permission android:name="**your_package_name**.permission.C2D_MESSAGE" android:protectionLevel="signature" />`
 
     	`<uses-permission android:name="your_package_name.permission.C2D_MESSAGE" />`
     	`<uses-permission android:name="android.permission.WAKE_LOCK" />`
