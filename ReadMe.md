@@ -246,7 +246,16 @@ Version 4 of the Appota Game for Android has published in this reposity and in <
 
 
       	`</receiver>`
-        
+		
+        <!-- Set Sender ID for push notification -->
+		
+        `<meta-data`
+		
+            `android:name="com.appota.push.gcm_sender_id"`
+			
+            `android:value="id:YOUR_GOOGLE_PROJECT_ID" />`
+			
+        <!-- END configuration for Push Notification -->
 
 ### [2.3. Users](#users)
 
@@ -413,6 +422,8 @@ Check whether user is logged-in or not : `AppotaGameSDK.getInstance().isUserLogg
 		for creating charging money system on mobile web.
 
 ### [2.5. Push Notifications](#header25)
+
+[Configure Push Notification see at Configure SDK](#22-configure-sdk)
 
 Set push notification to a group:
 	
