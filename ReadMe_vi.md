@@ -417,7 +417,9 @@ Kiểm tra trạng thái người chơi đã đăng nhập hay chưa : `AppotaGa
 
 ### [2.5. Các chức năng liên quan đến push notification](#header25)
 
-Cài đặt push notification tới một nhóm:
+[Cấu hình Push Notification xem ở cấu hình SDK](#22-cấu-hình-sdk)
+
+Thiết lập push notification tới một nhóm:
 	
 	AppotaGameSDK.getInstance().setPushGroup("device_tokens(group1,group2....)").configure(activity,sdkCallback);
 

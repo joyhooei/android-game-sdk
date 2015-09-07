@@ -243,7 +243,17 @@ Appota Game 安卓的SDK4已展开并在开发人员预览版。第3版本还在
 
       	`</receiver>`
         
-
+		
+        `<!-- Set Sender ID for push notification -->`
+		
+        `<meta-data`
+		
+        `android:name="com.appota.push.gcm_sender_id"`
+		
+        `android:value="id:YOUR_GOOGLE_PROJECT_ID" />`
+		
+        `<!-- END configuration for Push Notification -->`
+		
 ### [2.3. 用户相关功能](#users)
 
 >- SDK提供在Appota系统上的创建，登录账号（用Facebook,Google & Twitter）各种方式，所以用户可通过该账号来进行支付
@@ -410,6 +420,8 @@ Appota Game 安卓的SDK4已展开并在开发人员预览版。第3版本还在
 		用来配置游戏里的玩家信息.
 
 ### [2.5. Push Notifications](#header25)
+
+[Configure Push Notification see at Configure SDK](#22-sdk配置)
 
 配置推送通知到一群：
 	
