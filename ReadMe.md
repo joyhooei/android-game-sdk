@@ -247,15 +247,15 @@ Version 4 of the Appota Game for Android has published in this reposity and in <
 
       	`</receiver>`
 		
-        <!-- Set Sender ID for push notification -->
+        `<!-- Set Sender ID for push notification -->`
 		
         `<meta-data`
 		
-            `android:name="com.appota.push.gcm_sender_id"`
-			
-            `android:value="id:YOUR_GOOGLE_PROJECT_ID" />`
-			
-        <!-- END configuration for Push Notification -->
+        `android:name="com.appota.push.gcm_sender_id"`
+		
+        `android:value="id:YOUR_GOOGLE_PROJECT_ID" />`
+		
+        `<!-- END configuration for Push Notification -->`
 
 ### [2.3. Users](#users)
 
