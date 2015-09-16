@@ -84,7 +84,7 @@ function verify_appota_transaction($transaction_id, $amount, $state, $target) {
     $fields = array('transaction_id' => $transaction_id);
     $result = call_curl_post($url, $fields);
 
-    if ($result['status'] == 1 and $result['data']['amount'] == $amount and $result['data']['state'] == $state and $result['data']['target']) {
+    if ($result['status'] == true and $result['data']['amount'] == $amount and $result['data']['state'] == $state and $result['data']['target']) {
         return true;
     }
     return false;
