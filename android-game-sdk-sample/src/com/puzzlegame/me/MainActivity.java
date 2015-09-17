@@ -126,12 +126,12 @@ public class MainActivity extends Activity {
 	public class MyImplApptaGameSDKCallback extends AppotaGameSDKCallback {
 		@Override
 		public String getPaymentState(String packageID) {
-			//My example with using packageID for returning payment state
-			if(!packageID.equals("app.pkid.tym4K")){
-				return "sv-standard-state";
-			}else {
-				return "sv-vip-state";
-			}
+			//You can set any string value if you want, in my case, return package id, package value, username & server
+		    //Note :Length of Payment State does not exceed 150 characters
+			String userName = AppotaGameSDK.getInstance().getUserInfo().username;
+		    String server = "Server_Name";
+		    String packageAmout = "1000_gold";//package of 1000 gold, game amount
+			return packageID+"_"+packageAmout+"_"+userName+"_"+server;
 		}
 
 		@Override
