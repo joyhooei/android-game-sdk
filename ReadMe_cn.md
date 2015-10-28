@@ -107,7 +107,10 @@ Appota Game 安卓的SDK4已展开并在开发人员预览版。第3版本还在
 		
 	}
 	```
-	
+* ** 重要 **
+* 请登入处理您的游戏在onUserLoginSuccess使用AppotaUserLoginResult
+* 请办理注销你的游戏在onUserLogout
+* getPaymentState包ID来实现，让您的支付状态，正确的是非常重要的
 
 	[AppotaPaymentResult 在2.4.c详细查看](#24-支付相关功能)	
 
@@ -351,7 +354,8 @@ Appota Game 安卓的SDK4已展开并在开发人员预览版。第3版本还在
 
 #### [2.3.7. 登录会话](#header2352)
 
-默认登录状态将维持到玩家选择退出。若你要用户当打开应用就要登录应用并且当关闭应用就自动退出。烦请采用下面方式:
+默认登录状态将维持到玩家选择退出。
+若你要用户当打开应用就要登录应用并且当关闭应用就自动退出。烦请采用下面方式:
 
 `AppotaGameSDK.getInstance().setKeepLoginSession(false);`
 
@@ -454,8 +458,11 @@ Appota Game 安卓的SDK4已展开并在开发人员预览版。第3版本还在
 
 
 若SDK配置不足够或者不准确AppotaGameSDK 将出现意外。
- Facebook, Google, Twitter exception 错误只在研发人用到但不填报或者填报不准确时发生。下面是意外列表:
-
+
+ Facebook, Google, Twitter exception 错误只在研发人用到但不填报或者填报不准确时发生。
+下面是意外列表:
+
+
 
 |名称|错误通知|
 |----|-------|
@@ -466,8 +473,11 @@ Appota Game 安卓的SDK4已展开并在开发人员预览版。第3版本还在
 * •	提升配置:
 	
  Appota Game SDK4本身有担任处理crash的功能。
- 所有意外 (crash exceptions) 被sdk4接受并且留存让研发人查看，分析。
-如果你使用Crashlytics或者 crashes其他通知仓库而还要处理SDK的crashes SDK, 烦请以下的方式(默认若你正在使用Crashlytics，自动接受 crashes功能就关闭):
+ 
+所有意外 (crash exceptions) 被sdk4接受并且留存让研发人查看，分析。
+
+
+如果你使用Crashlytics或者 crashes其他通知仓库而还要处理SDK的crashes SDK, 烦请以下的方式(默认若你正在使用Crashlytics，自动接受 crashes功能就关闭):
 
 	`AppotaGameSDK.getInstance().autoCatchException();`
 
