@@ -344,7 +344,6 @@ Use your twitter account to fill the Twitter login form:
 	
 
 #### [2.3.5. Logout](#header235)
- **Important: Please handle log out your game in this callback**
 `AppotaGameSDK.getInstance().logout();`
 	
 
