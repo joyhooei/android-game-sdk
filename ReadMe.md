@@ -107,7 +107,10 @@ Version 4 of the Appota Game for Android has published in this reposity and in <
 		
 	}
 	```
-	
+* **Important**	
+* Please handle login your game in `onUserLoginSuccess` use `AppotaUserLoginResult`
+* Please handle logout your game in `onUserLogot` 
+* `getPaymentState` with package id is important to implement to make your payment state correct
 
 	[See detail AppotaPaymentResult at 2.4.c](#24-payment)	
 
