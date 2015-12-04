@@ -173,11 +173,6 @@ public class MainActivity extends Activity {
 
 
     
-    public void sendError(View view){
-    	AppotaGameSDK.getInstance().sendEvent("On Click", "Click send error button", "");
-    	throw new AppotaGameSDKException(AppotaGameSDKException.EXCEPTION_TYPE.AppotaInvalidOperationException.toString());
-    }
-    
     private int getAppVersionCode(Context context) {
 		int versionCode = -1;
 		try {
