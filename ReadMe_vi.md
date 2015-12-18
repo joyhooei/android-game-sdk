@@ -186,7 +186,8 @@ Phiên bản 4 SDK Game cho Android của Appota đã được cập nhật tạ
 	* Khai báo activity cho Facebook login:
 	
 		 `<activity
-            android:name="com.appota.facebook.LoginActivity"
+            android:name="com.appota.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />`
 
 		Khai báo thẻ meta-data cho Facebook Application ID

@@ -190,7 +190,8 @@ Version 4 of the Appota Game for Android has published in this reposity and in <
 	* Declare activity for Facebook login:
 	
 		 `<activity
-            android:name="com.appota.facebook.LoginActivity"
+            android:name="com.appota.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />`
 
 		Declare meta-data tag for Facebook Application ID

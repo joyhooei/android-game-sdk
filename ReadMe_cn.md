@@ -187,7 +187,8 @@ Appota Game 安卓的SDK4已展开并在开发人员预览版。第3版本还在
 	* 输入activity 让 Facebook login:
 	
 		 `<activity
-            android:name="com.appota.facebook.LoginActivity"
+            android:name="com.appota.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />`
 
 		输入meta-data卡 给 Facebook Application ID
